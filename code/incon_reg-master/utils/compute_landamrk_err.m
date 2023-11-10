@@ -1,0 +1,6 @@
+function landmark_err = compute_landamrk_err(source_vertex_reg, ...
+                        landmark_source_index,...
+                        landmark_target_pos)
+landmark_err = source_vertex_reg(landmark_source_index,:) - landmark_target_pos;
+landmark_err = mean(sqrt(sum(landmark_err.^2, 2)));
+end
